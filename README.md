@@ -10,7 +10,14 @@ output: 21
 
 //21 = 6 + 5 + 4 + 3 + 2 + 1
 ```
+```swift
+func sumUp(n: Int)-> Int {
+if n == 1 {return 1}
 
+return  n + sumUp(n: n - 1)
+}
+sumUp(n: 6)
+```
 
 - ### Multiply array
 
@@ -20,6 +27,16 @@ Write a function called `multArr` that takes in an array of numbers as an argume
 multArr([2, 3, 5]); // returns 30
 multArr([5, 5, 1, 2]); //returns 50
 ```
+```swift
+func multArr(numberArray: [Int], currentIndex: Int) -> Int {
+
+if currentIndex == numberArray.count {return 1}
+
+return numberArray[currentIndex] * multArr(numberArray: numberArray, currentIndex: currentIndex + 1)
+}
+multArr(numberArray:[2,3,5], currentIndex: 0)
+
+```
 
 - ### Concatenate array
 
@@ -28,6 +45,16 @@ Write a function called `concatArr` that takes in an array of strings as an argu
 ```js
 concatArr(['is', 'it', 'tomorrow']); // returns 'is it tomorrow'
 concatArr(['or', 'just', 'the', 'end', 'of', 'time']); //returns 'or just the end of time'
+```
+```swift
+func concatArr(stringArray: [String], currentIndex: Int) -> String {
+
+if currentIndex == stringArray.count {return ""}
+
+return stringArray[currentIndex] + " " + concatArr(stringArray: stringArray, currentIndex: currentIndex + 1)
+}
+concatArr(stringArray:["or", "just", "the", "end", "of", "time"], currentIndex: 0)
+
 ```
 
 - ### Sum evens
